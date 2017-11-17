@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Code Coffee</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>CODE COFFEE</h1>
+            <hr>
+            <p>Current Reservations and Waiting List!</p>
+            <p>
+                <a class="btn btn-danger btn-lg" href="/add">Make Reservation</a>
+                <a class="btn btn-primary btn-lg" href="/">Home</a>
+            </p>
+        </div>
+    </div>
+    <div class="wrap">
+        <!--Input row-->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <h2 class="card-header">Current Reservations</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="searchTerm" id="phone"></label>
+                            <input type="text" class="form-control" id="name-input" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="searchTerm"><b>XXX</b></label>
+                            <input type="text" class="form-control" id="role-input" placeholder="">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+        <div class="wrap">
+        <!--Input row-->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <h2 class="card-header">Waiting List</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="searchTerm"><b>XXX</b></label>
+                            <input type="text" class="form-control" id="name-input" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="searchTerm"><b>XXX</b></label>
+                            <input type="text" class="form-control" id="role-input" placeholder="">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+      <a href="apitable.html">API Table Link</a>
+  <br>
+   <a href="waitlist.html">API Wait List</a>
+
+
+  <script type="text/javascript">
+    function displayTables() {
+      // var searchedTable = $("#character-search").val().trim();
+
+      // searchedTable = searchedTable.replace(/\s+/g, "").toLowerCase();
+
+      $.get("/api/", function(data) {
+        console.log(data);
+        if (data) {
+          $("#stats").show();
+          $("#name").text(data.name);
+          $("#phone").text(data.phone);
+          $("#email").text(data.email);
+          $("#id").text(data.id);
+        }
+        else {
+          $("#name").text("The force is not strong with this one. Your character was not found.");
+          $("#stats").hide();
+        }
+      });
+    }
+
+    displayTables();
+  </script>
+
+
+</body>
+
+</html>

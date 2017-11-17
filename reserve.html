@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Coffee Shop</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+<body>
+
+<div class="jumbotron">
+        <div class="container">
+            <h1>CODE COFFEE</h1>
+            <hr>
+            <p>Make Your Reservation</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/view">View Tables</a>
+                <a class="btn btn-light btn-lg" href="/">Home</a>
+            </p>
+        </div>
+    </div>
+
+<div class="wrap">
+            <!--Input row-->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <h2 class="card-header">Table Reservation</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="searchTerm"><b>Name</b></label>
+                                <input type="text" class="form-control" id="name-input" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="searchTerm"><b>Phone Number</b></label>
+                                <input type="text" class="form-control" id="phone-input" placeholder="">
+                            </div>
+                              <div class="form-group">
+                                <label for="searchTerm"><b>Email</b></label>
+                                <input type="text" class="form-control" id="email-input" placeholder="">
+                            </div>
+                           
+                            </div>
+                            <div class="form-group">
+                                <label for="searchTerm"><b>Unique ID</b></label>
+                                <input type="text" class="form-control" id="id-input" placeholder="">
+                            </div>
+                            <div>
+                                <button id="submit" type="button" class="btn btn-success" style="width: 25%; font-size: 22px">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <a href="apitable.html">API Table Link</a>
+  <br>
+   <a href="waitlist.html">API Wait List</a>
+
+  <script type="text/javascript">
+    // Question: What does this code do?
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
+      var newTable = {
+        name: $("#name-input").val().trim(),
+        phone: $("#phone-input").val().trim(),
+        email: $("#email-input").val().trim(),
+        id: $("#id-input").val().trim()
+      };
+
+      // Question: What does this code do??
+      $.post("/api/new", newTable)
+      .done(function(data) {
+        console.log(data);
+        alert("Adding table...");
+      });
+    });
+
+
+
+    
+  </script>
+
+
+
+</body>
+</html>
