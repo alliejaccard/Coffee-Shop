@@ -1,62 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Coffee Shop</title>
+	<title>Gray's Coffee</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
 <body>
 
-<div class="jumbotron">
-        <div class="container">
-            <h1>CODE COFFEE</h1>
-            <hr>
-            <p>Make Your Reservation</p>
-            <p>
-                <a class="btn btn-primary btn-lg" href="tables.html">View Tables</a>
-                <a class="btn btn-light btn-lg" href="index.html">Home</a>
-            </p>
+	<nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+    <img src="leaf.png" class="logo" width="100" height="100" class="d-inline-block align-top" alt="">
+</a>
+        <div class="text-center" id="nav">
+            <h1>GRAY'S COFFEE</h1>
+              <button class="button" type="button"><a href="index.html">
+                <h2>Home</h2></button></a>
+            <button class="button" type="button"><a href="tables.html">
+                <h2>Tables</h2></button></a>
+                <button class="button" type="button"><a href="reserve.html">
+                <h2>Reservations</h2></button></a>
         </div>
+    </nav>
+
+    <div class="bg">
+        <img src="header.jpeg" height="500" width="1675">
     </div>
 
-<div class="wrap">
-            <!--Input row-->
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <h2 class="card-header">Table Reservation</h2>
-                        <form>
-                            <div class="form-group">
-                                <label for="searchTerm"><b>Name</b></label>
-                                <input type="text" class="form-control" id="name-input" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for="searchTerm"><b>Phone Number</b></label>
-                                <input type="text" class="form-control" id="role-input" placeholder="">
-                            </div>
-                              <div class="form-group">
-                                <label for="searchTerm"><b>Email</b></label>
-                                <input type="text" class="form-control" id="role-input" placeholder="">
-                            </div>
-                           
-                            </div>
-                            <div class="form-group">
-                                <label for="searchTerm"><b>Unique ID</b></label>
-                                <input type="text" class="form-control" id="rate-input" placeholder="">
-                            </div>
-                            <div>
-                                <button id="submit" type="button" class="btn btn-success" style="width: 25%; font-size: 22px">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+<form action="" method="POST" role="form">
+        <legend><h2>Make a Reservation</h2></legend>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name">
+            <input type="text" class="form-control" placeholder="Phone">
+            <input type="text" class="form-control" placeholder="Day">
+            <input type="text" class="form-control" placeholder="Time">
         </div>
-    </div>
+        <button type="submit" class="btn btn-light">Submit</button>
+    </form>
+</div>
 
-  <a href="apitable.html">API Table Link</a>
-  <br>
-   <a href="waitlist.html">API Wait List</a>
 
+<footer>
+	<h4>GRAY'S COFFEE</h4>
+	 <a href="apitable.html"><h5>API Table Link</h5></a>
+   <a href="waitlist.html"><h5>API Wait List</h5></a>
+
+</footer>
+
+
+ 
 
 </body>
 </html>
