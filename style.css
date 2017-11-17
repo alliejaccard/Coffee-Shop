@@ -1,0 +1,14 @@
+h1 {
+	font-size: 72px;
+	text-align: center;
+}
+
+p {
+	font-size: 32px;
+	text-align: center;
+}
+
+.vl {
+	border-left: 2px solid green;
+    height: 100px;
+}
